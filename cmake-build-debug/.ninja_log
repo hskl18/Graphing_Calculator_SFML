@@ -1,0 +1,20 @@
+# ninja log v5
+497	752	1676453630535991950	CMakeFiles/ttt.dir/includes/config/system.cpp.o	36b53b2a34c3b624
+4	618	1676453630401141383	CMakeFiles/ttt.dir/includes/config/config.cpp.o	d207cecb38ce5fda
+4	496	1676453630276856755	CMakeFiles/ttt.dir/includes/input_box/input_box.cpp.o	a5c8a45bc8f0e5a5
+471	811	1676453630593884401	CMakeFiles/ttt.dir/includes/button/buttons.cpp.o	13f9b5b160348660
+5	501	1676453630281396847	CMakeFiles/ttt.dir/includes/button/button.cpp.o	d43325b3af055010
+4	471	1676453630253328415	CMakeFiles/ttt.dir/includes/header/header.cpp.o	a7bf73384e66dcb9
+4	525	1676453630307345359	CMakeFiles/ttt.dir/main.cpp.o	1ce66a179031a451
+0	223	1676455442841142432	build.ninja	2afd7ab6959814d1
+4	556	1676453630338561381	CMakeFiles/ttt.dir/includes/engine/engine.cpp.o	3f4bff6865b7acf
+811	842	1676453630627801262	ttt	d9ff974038ba2457
+3	477	1676455447057930596	CMakeFiles/ttt.dir/includes/header/header.cpp.o	f3a89649e479960b
+5	505	1676455447085989480	CMakeFiles/ttt.dir/includes/button/button.cpp.o	b8849e4e59f9f5e9
+4	508	1676455447088826673	CMakeFiles/ttt.dir/includes/input_box/input_box.cpp.o	4a317d868dd59482
+3	524	1676455447105622245	CMakeFiles/ttt.dir/main.cpp.o	5886f5bc3662680b
+4	580	1676455447162352435	CMakeFiles/ttt.dir/includes/engine/engine.cpp.o	6f1ce2d7e0ae0b7f
+3	644	1676455447226638320	CMakeFiles/ttt.dir/includes/config/config.cpp.o	edf8ac56868c825b
+505	791	1676455447373307132	CMakeFiles/ttt.dir/includes/config/system.cpp.o	55010aaab9be6fa
+477	841	1676455447423540929	CMakeFiles/ttt.dir/includes/button/buttons.cpp.o	9adedfa2562e0e1d
+841	872	1676455447457519659	ttt	d9ff974038ba2457
