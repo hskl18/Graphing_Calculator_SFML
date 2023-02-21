@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/ttt.dir/includes/button/button.cpp.o"
+  "CMakeFiles/ttt.dir/includes/button/button.cpp.o.d"
+  "CMakeFiles/ttt.dir/includes/config/config.cpp.o"
+  "CMakeFiles/ttt.dir/includes/config/config.cpp.o.d"
+  "CMakeFiles/ttt.dir/includes/engine/engine.cpp.o"
+  "CMakeFiles/ttt.dir/includes/engine/engine.cpp.o.d"
+  "CMakeFiles/ttt.dir/includes/header/header.cpp.o"
+  "CMakeFiles/ttt.dir/includes/header/header.cpp.o.d"
+  "CMakeFiles/ttt.dir/includes/lib/rpn/rpn.cpp.o"
+  "CMakeFiles/ttt.dir/includes/lib/rpn/rpn.cpp.o.d"
+  "CMakeFiles/ttt.dir/includes/lib/shunting_yard/shunting_yard.cpp.o"
+  "CMakeFiles/ttt.dir/includes/lib/shunting_yard/shunting_yard.cpp.o.d"
+  "CMakeFiles/ttt.dir/includes/lib/token/function.cpp.o"
+  "CMakeFiles/ttt.dir/includes/lib/token/function.cpp.o.d"
+  "CMakeFiles/ttt.dir/includes/lib/token/integer.cpp.o"
+  "CMakeFiles/ttt.dir/includes/lib/token/integer.cpp.o.d"
+  "CMakeFiles/ttt.dir/includes/lib/token/leftparen.cpp.o"
+  "CMakeFiles/ttt.dir/includes/lib/token/leftparen.cpp.o.d"
+  "CMakeFiles/ttt.dir/includes/lib/token/operator.cpp.o"
+  "CMakeFiles/ttt.dir/includes/lib/token/operator.cpp.o.d"
+  "CMakeFiles/ttt.dir/includes/lib/token/rightparen.cpp.o"
+  "CMakeFiles/ttt.dir/includes/lib/token/rightparen.cpp.o.d"
+  "CMakeFiles/ttt.dir/includes/lib/token/token.cpp.o"
+  "CMakeFiles/ttt.dir/includes/lib/token/token.cpp.o.d"
+  "CMakeFiles/ttt.dir/includes/lib/token/variable.cpp.o"
+  "CMakeFiles/ttt.dir/includes/lib/token/variable.cpp.o.d"
+  "CMakeFiles/ttt.dir/includes/plot/plot.cpp.o"
+  "CMakeFiles/ttt.dir/includes/plot/plot.cpp.o.d"
+  "CMakeFiles/ttt.dir/includes/tokenizer/tokenizer/tokenizer.cpp.o"
+  "CMakeFiles/ttt.dir/includes/tokenizer/tokenizer/tokenizer.cpp.o.d"
+  "CMakeFiles/ttt.dir/includes/tokenizer/tokenizer_functions/tokenizer_functions.cpp.o"
+  "CMakeFiles/ttt.dir/includes/tokenizer/tokenizer_functions/tokenizer_functions.cpp.o.d"
+  "CMakeFiles/ttt.dir/main.cpp.o"
+  "CMakeFiles/ttt.dir/main.cpp.o.d"
+  "ttt"
+  "ttt.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/ttt.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

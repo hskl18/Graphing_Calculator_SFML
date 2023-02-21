@@ -57,10 +57,10 @@ RM = "/Users/ice/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/2
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ice/Projects/TicTacToeSFML
+CMAKE_SOURCE_DIR = /Users/ice/Projects/Graphing_Calculator_SFML
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ice/Projects/TicTacToeSFML/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ice/Projects/TicTacToeSFML/cmake-build-debug/CMakeFiles /Users/ice/Projects/TicTacToeSFML/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/CMakeFiles /Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ice/Projects/TicTacToeSFML/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,30 +129,6 @@ ttt/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/build
 .PHONY : ttt/fast
 
-includes/app_include_test/app_include_test.o: includes/app_include_test/app_include_test.cpp.o
-.PHONY : includes/app_include_test/app_include_test.o
-
-# target to build an object file
-includes/app_include_test/app_include_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/app_include_test/app_include_test.cpp.o
-.PHONY : includes/app_include_test/app_include_test.cpp.o
-
-includes/app_include_test/app_include_test.i: includes/app_include_test/app_include_test.cpp.i
-.PHONY : includes/app_include_test/app_include_test.i
-
-# target to preprocess a source file
-includes/app_include_test/app_include_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/app_include_test/app_include_test.cpp.i
-.PHONY : includes/app_include_test/app_include_test.cpp.i
-
-includes/app_include_test/app_include_test.s: includes/app_include_test/app_include_test.cpp.s
-.PHONY : includes/app_include_test/app_include_test.s
-
-# target to generate assembly for a file
-includes/app_include_test/app_include_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/app_include_test/app_include_test.cpp.s
-.PHONY : includes/app_include_test/app_include_test.cpp.s
-
 includes/button/button.o: includes/button/button.cpp.o
 .PHONY : includes/button/button.o
 
@@ -176,30 +152,6 @@ includes/button/button.s: includes/button/button.cpp.s
 includes/button/button.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/button/button.cpp.s
 .PHONY : includes/button/button.cpp.s
-
-includes/button/buttons.o: includes/button/buttons.cpp.o
-.PHONY : includes/button/buttons.o
-
-# target to build an object file
-includes/button/buttons.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/button/buttons.cpp.o
-.PHONY : includes/button/buttons.cpp.o
-
-includes/button/buttons.i: includes/button/buttons.cpp.i
-.PHONY : includes/button/buttons.i
-
-# target to preprocess a source file
-includes/button/buttons.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/button/buttons.cpp.i
-.PHONY : includes/button/buttons.cpp.i
-
-includes/button/buttons.s: includes/button/buttons.cpp.s
-.PHONY : includes/button/buttons.s
-
-# target to generate assembly for a file
-includes/button/buttons.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/button/buttons.cpp.s
-.PHONY : includes/button/buttons.cpp.s
 
 includes/config/config.o: includes/config/config.cpp.o
 .PHONY : includes/config/config.o
@@ -273,29 +225,293 @@ includes/header/header.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/header/header.cpp.s
 .PHONY : includes/header/header.cpp.s
 
-includes/input_box/input_box.o: includes/input_box/input_box.cpp.o
-.PHONY : includes/input_box/input_box.o
+includes/lib/rpn/rpn.o: includes/lib/rpn/rpn.cpp.o
+.PHONY : includes/lib/rpn/rpn.o
 
 # target to build an object file
-includes/input_box/input_box.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/input_box/input_box.cpp.o
-.PHONY : includes/input_box/input_box.cpp.o
+includes/lib/rpn/rpn.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/rpn/rpn.cpp.o
+.PHONY : includes/lib/rpn/rpn.cpp.o
 
-includes/input_box/input_box.i: includes/input_box/input_box.cpp.i
-.PHONY : includes/input_box/input_box.i
+includes/lib/rpn/rpn.i: includes/lib/rpn/rpn.cpp.i
+.PHONY : includes/lib/rpn/rpn.i
 
 # target to preprocess a source file
-includes/input_box/input_box.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/input_box/input_box.cpp.i
-.PHONY : includes/input_box/input_box.cpp.i
+includes/lib/rpn/rpn.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/rpn/rpn.cpp.i
+.PHONY : includes/lib/rpn/rpn.cpp.i
 
-includes/input_box/input_box.s: includes/input_box/input_box.cpp.s
-.PHONY : includes/input_box/input_box.s
+includes/lib/rpn/rpn.s: includes/lib/rpn/rpn.cpp.s
+.PHONY : includes/lib/rpn/rpn.s
 
 # target to generate assembly for a file
-includes/input_box/input_box.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/input_box/input_box.cpp.s
-.PHONY : includes/input_box/input_box.cpp.s
+includes/lib/rpn/rpn.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/rpn/rpn.cpp.s
+.PHONY : includes/lib/rpn/rpn.cpp.s
+
+includes/lib/shunting_yard/shunting_yard.o: includes/lib/shunting_yard/shunting_yard.cpp.o
+.PHONY : includes/lib/shunting_yard/shunting_yard.o
+
+# target to build an object file
+includes/lib/shunting_yard/shunting_yard.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/shunting_yard/shunting_yard.cpp.o
+.PHONY : includes/lib/shunting_yard/shunting_yard.cpp.o
+
+includes/lib/shunting_yard/shunting_yard.i: includes/lib/shunting_yard/shunting_yard.cpp.i
+.PHONY : includes/lib/shunting_yard/shunting_yard.i
+
+# target to preprocess a source file
+includes/lib/shunting_yard/shunting_yard.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/shunting_yard/shunting_yard.cpp.i
+.PHONY : includes/lib/shunting_yard/shunting_yard.cpp.i
+
+includes/lib/shunting_yard/shunting_yard.s: includes/lib/shunting_yard/shunting_yard.cpp.s
+.PHONY : includes/lib/shunting_yard/shunting_yard.s
+
+# target to generate assembly for a file
+includes/lib/shunting_yard/shunting_yard.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/shunting_yard/shunting_yard.cpp.s
+.PHONY : includes/lib/shunting_yard/shunting_yard.cpp.s
+
+includes/lib/token/function.o: includes/lib/token/function.cpp.o
+.PHONY : includes/lib/token/function.o
+
+# target to build an object file
+includes/lib/token/function.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/function.cpp.o
+.PHONY : includes/lib/token/function.cpp.o
+
+includes/lib/token/function.i: includes/lib/token/function.cpp.i
+.PHONY : includes/lib/token/function.i
+
+# target to preprocess a source file
+includes/lib/token/function.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/function.cpp.i
+.PHONY : includes/lib/token/function.cpp.i
+
+includes/lib/token/function.s: includes/lib/token/function.cpp.s
+.PHONY : includes/lib/token/function.s
+
+# target to generate assembly for a file
+includes/lib/token/function.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/function.cpp.s
+.PHONY : includes/lib/token/function.cpp.s
+
+includes/lib/token/integer.o: includes/lib/token/integer.cpp.o
+.PHONY : includes/lib/token/integer.o
+
+# target to build an object file
+includes/lib/token/integer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/integer.cpp.o
+.PHONY : includes/lib/token/integer.cpp.o
+
+includes/lib/token/integer.i: includes/lib/token/integer.cpp.i
+.PHONY : includes/lib/token/integer.i
+
+# target to preprocess a source file
+includes/lib/token/integer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/integer.cpp.i
+.PHONY : includes/lib/token/integer.cpp.i
+
+includes/lib/token/integer.s: includes/lib/token/integer.cpp.s
+.PHONY : includes/lib/token/integer.s
+
+# target to generate assembly for a file
+includes/lib/token/integer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/integer.cpp.s
+.PHONY : includes/lib/token/integer.cpp.s
+
+includes/lib/token/leftparen.o: includes/lib/token/leftparen.cpp.o
+.PHONY : includes/lib/token/leftparen.o
+
+# target to build an object file
+includes/lib/token/leftparen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/leftparen.cpp.o
+.PHONY : includes/lib/token/leftparen.cpp.o
+
+includes/lib/token/leftparen.i: includes/lib/token/leftparen.cpp.i
+.PHONY : includes/lib/token/leftparen.i
+
+# target to preprocess a source file
+includes/lib/token/leftparen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/leftparen.cpp.i
+.PHONY : includes/lib/token/leftparen.cpp.i
+
+includes/lib/token/leftparen.s: includes/lib/token/leftparen.cpp.s
+.PHONY : includes/lib/token/leftparen.s
+
+# target to generate assembly for a file
+includes/lib/token/leftparen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/leftparen.cpp.s
+.PHONY : includes/lib/token/leftparen.cpp.s
+
+includes/lib/token/operator.o: includes/lib/token/operator.cpp.o
+.PHONY : includes/lib/token/operator.o
+
+# target to build an object file
+includes/lib/token/operator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/operator.cpp.o
+.PHONY : includes/lib/token/operator.cpp.o
+
+includes/lib/token/operator.i: includes/lib/token/operator.cpp.i
+.PHONY : includes/lib/token/operator.i
+
+# target to preprocess a source file
+includes/lib/token/operator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/operator.cpp.i
+.PHONY : includes/lib/token/operator.cpp.i
+
+includes/lib/token/operator.s: includes/lib/token/operator.cpp.s
+.PHONY : includes/lib/token/operator.s
+
+# target to generate assembly for a file
+includes/lib/token/operator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/operator.cpp.s
+.PHONY : includes/lib/token/operator.cpp.s
+
+includes/lib/token/rightparen.o: includes/lib/token/rightparen.cpp.o
+.PHONY : includes/lib/token/rightparen.o
+
+# target to build an object file
+includes/lib/token/rightparen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/rightparen.cpp.o
+.PHONY : includes/lib/token/rightparen.cpp.o
+
+includes/lib/token/rightparen.i: includes/lib/token/rightparen.cpp.i
+.PHONY : includes/lib/token/rightparen.i
+
+# target to preprocess a source file
+includes/lib/token/rightparen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/rightparen.cpp.i
+.PHONY : includes/lib/token/rightparen.cpp.i
+
+includes/lib/token/rightparen.s: includes/lib/token/rightparen.cpp.s
+.PHONY : includes/lib/token/rightparen.s
+
+# target to generate assembly for a file
+includes/lib/token/rightparen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/rightparen.cpp.s
+.PHONY : includes/lib/token/rightparen.cpp.s
+
+includes/lib/token/token.o: includes/lib/token/token.cpp.o
+.PHONY : includes/lib/token/token.o
+
+# target to build an object file
+includes/lib/token/token.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/token.cpp.o
+.PHONY : includes/lib/token/token.cpp.o
+
+includes/lib/token/token.i: includes/lib/token/token.cpp.i
+.PHONY : includes/lib/token/token.i
+
+# target to preprocess a source file
+includes/lib/token/token.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/token.cpp.i
+.PHONY : includes/lib/token/token.cpp.i
+
+includes/lib/token/token.s: includes/lib/token/token.cpp.s
+.PHONY : includes/lib/token/token.s
+
+# target to generate assembly for a file
+includes/lib/token/token.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/token.cpp.s
+.PHONY : includes/lib/token/token.cpp.s
+
+includes/lib/token/variable.o: includes/lib/token/variable.cpp.o
+.PHONY : includes/lib/token/variable.o
+
+# target to build an object file
+includes/lib/token/variable.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/variable.cpp.o
+.PHONY : includes/lib/token/variable.cpp.o
+
+includes/lib/token/variable.i: includes/lib/token/variable.cpp.i
+.PHONY : includes/lib/token/variable.i
+
+# target to preprocess a source file
+includes/lib/token/variable.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/variable.cpp.i
+.PHONY : includes/lib/token/variable.cpp.i
+
+includes/lib/token/variable.s: includes/lib/token/variable.cpp.s
+.PHONY : includes/lib/token/variable.s
+
+# target to generate assembly for a file
+includes/lib/token/variable.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/lib/token/variable.cpp.s
+.PHONY : includes/lib/token/variable.cpp.s
+
+includes/plot/plot.o: includes/plot/plot.cpp.o
+.PHONY : includes/plot/plot.o
+
+# target to build an object file
+includes/plot/plot.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/plot/plot.cpp.o
+.PHONY : includes/plot/plot.cpp.o
+
+includes/plot/plot.i: includes/plot/plot.cpp.i
+.PHONY : includes/plot/plot.i
+
+# target to preprocess a source file
+includes/plot/plot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/plot/plot.cpp.i
+.PHONY : includes/plot/plot.cpp.i
+
+includes/plot/plot.s: includes/plot/plot.cpp.s
+.PHONY : includes/plot/plot.s
+
+# target to generate assembly for a file
+includes/plot/plot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/plot/plot.cpp.s
+.PHONY : includes/plot/plot.cpp.s
+
+includes/tokenizer/tokenizer/tokenizer.o: includes/tokenizer/tokenizer/tokenizer.cpp.o
+.PHONY : includes/tokenizer/tokenizer/tokenizer.o
+
+# target to build an object file
+includes/tokenizer/tokenizer/tokenizer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/tokenizer/tokenizer/tokenizer.cpp.o
+.PHONY : includes/tokenizer/tokenizer/tokenizer.cpp.o
+
+includes/tokenizer/tokenizer/tokenizer.i: includes/tokenizer/tokenizer/tokenizer.cpp.i
+.PHONY : includes/tokenizer/tokenizer/tokenizer.i
+
+# target to preprocess a source file
+includes/tokenizer/tokenizer/tokenizer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/tokenizer/tokenizer/tokenizer.cpp.i
+.PHONY : includes/tokenizer/tokenizer/tokenizer.cpp.i
+
+includes/tokenizer/tokenizer/tokenizer.s: includes/tokenizer/tokenizer/tokenizer.cpp.s
+.PHONY : includes/tokenizer/tokenizer/tokenizer.s
+
+# target to generate assembly for a file
+includes/tokenizer/tokenizer/tokenizer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/tokenizer/tokenizer/tokenizer.cpp.s
+.PHONY : includes/tokenizer/tokenizer/tokenizer.cpp.s
+
+includes/tokenizer/tokenizer_functions/tokenizer_functions.o: includes/tokenizer/tokenizer_functions/tokenizer_functions.cpp.o
+.PHONY : includes/tokenizer/tokenizer_functions/tokenizer_functions.o
+
+# target to build an object file
+includes/tokenizer/tokenizer_functions/tokenizer_functions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/tokenizer/tokenizer_functions/tokenizer_functions.cpp.o
+.PHONY : includes/tokenizer/tokenizer_functions/tokenizer_functions.cpp.o
+
+includes/tokenizer/tokenizer_functions/tokenizer_functions.i: includes/tokenizer/tokenizer_functions/tokenizer_functions.cpp.i
+.PHONY : includes/tokenizer/tokenizer_functions/tokenizer_functions.i
+
+# target to preprocess a source file
+includes/tokenizer/tokenizer_functions/tokenizer_functions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/tokenizer/tokenizer_functions/tokenizer_functions.cpp.i
+.PHONY : includes/tokenizer/tokenizer_functions/tokenizer_functions.cpp.i
+
+includes/tokenizer/tokenizer_functions/tokenizer_functions.s: includes/tokenizer/tokenizer_functions/tokenizer_functions.cpp.s
+.PHONY : includes/tokenizer/tokenizer_functions/tokenizer_functions.s
+
+# target to generate assembly for a file
+includes/tokenizer/tokenizer_functions/tokenizer_functions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ttt.dir/build.make CMakeFiles/ttt.dir/includes/tokenizer/tokenizer_functions/tokenizer_functions.cpp.s
+.PHONY : includes/tokenizer/tokenizer_functions/tokenizer_functions.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -330,15 +546,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ttt"
-	@echo "... includes/app_include_test/app_include_test.o"
-	@echo "... includes/app_include_test/app_include_test.i"
-	@echo "... includes/app_include_test/app_include_test.s"
 	@echo "... includes/button/button.o"
 	@echo "... includes/button/button.i"
 	@echo "... includes/button/button.s"
-	@echo "... includes/button/buttons.o"
-	@echo "... includes/button/buttons.i"
-	@echo "... includes/button/buttons.s"
 	@echo "... includes/config/config.o"
 	@echo "... includes/config/config.i"
 	@echo "... includes/config/config.s"
@@ -348,9 +558,42 @@ help:
 	@echo "... includes/header/header.o"
 	@echo "... includes/header/header.i"
 	@echo "... includes/header/header.s"
-	@echo "... includes/input_box/input_box.o"
-	@echo "... includes/input_box/input_box.i"
-	@echo "... includes/input_box/input_box.s"
+	@echo "... includes/lib/rpn/rpn.o"
+	@echo "... includes/lib/rpn/rpn.i"
+	@echo "... includes/lib/rpn/rpn.s"
+	@echo "... includes/lib/shunting_yard/shunting_yard.o"
+	@echo "... includes/lib/shunting_yard/shunting_yard.i"
+	@echo "... includes/lib/shunting_yard/shunting_yard.s"
+	@echo "... includes/lib/token/function.o"
+	@echo "... includes/lib/token/function.i"
+	@echo "... includes/lib/token/function.s"
+	@echo "... includes/lib/token/integer.o"
+	@echo "... includes/lib/token/integer.i"
+	@echo "... includes/lib/token/integer.s"
+	@echo "... includes/lib/token/leftparen.o"
+	@echo "... includes/lib/token/leftparen.i"
+	@echo "... includes/lib/token/leftparen.s"
+	@echo "... includes/lib/token/operator.o"
+	@echo "... includes/lib/token/operator.i"
+	@echo "... includes/lib/token/operator.s"
+	@echo "... includes/lib/token/rightparen.o"
+	@echo "... includes/lib/token/rightparen.i"
+	@echo "... includes/lib/token/rightparen.s"
+	@echo "... includes/lib/token/token.o"
+	@echo "... includes/lib/token/token.i"
+	@echo "... includes/lib/token/token.s"
+	@echo "... includes/lib/token/variable.o"
+	@echo "... includes/lib/token/variable.i"
+	@echo "... includes/lib/token/variable.s"
+	@echo "... includes/plot/plot.o"
+	@echo "... includes/plot/plot.i"
+	@echo "... includes/plot/plot.s"
+	@echo "... includes/tokenizer/tokenizer/tokenizer.o"
+	@echo "... includes/tokenizer/tokenizer/tokenizer.i"
+	@echo "... includes/tokenizer/tokenizer/tokenizer.s"
+	@echo "... includes/tokenizer/tokenizer_functions/tokenizer_functions.o"
+	@echo "... includes/tokenizer/tokenizer_functions/tokenizer_functions.i"
+	@echo "... includes/tokenizer/tokenizer_functions/tokenizer_functions.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

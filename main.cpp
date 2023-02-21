@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-    //srand(time(NULL));
+    srand(time(NULL));
     Engine engine;
     engine.run();
 }

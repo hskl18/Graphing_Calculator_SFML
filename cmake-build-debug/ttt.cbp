@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\opt\;CMake Files\..\..\..\..\opt\homebrew\;CMake Files\..\..\..\..\opt\homebrew\lib\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\;CMake Files\..\..\..\..\opt\homebrew\lib\cmake\SFML\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/ice/Projects/TicTacToeSFML/cmake-build-debug"/>
+				<Option working_dir="/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ttt">
-				<Option output="/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/ttt" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/ice/Projects/TicTacToeSFML/cmake-build-debug"/>
+				<Option output="/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/ttt" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -33,15 +33,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 ttt"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 ttt"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ttt/fast">
-				<Option output="/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/ttt" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/ice/Projects/TicTacToeSFML/cmake-build-debug"/>
+				<Option output="/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/ttt" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -55,94 +55,163 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 ttt/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 ttt/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/ice/Projects/TicTacToeSFML/cmake-build-debug"/>
+				<Option working_dir="/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/ice/Projects/TicTacToeSFML/cmake-build-debug"/>
+				<Option working_dir="/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/TicTacToeSFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/includes/app_include_test/app_include_test.cpp">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/button/button.cpp">
 			<Option target="ttt"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/includes/app_include_test/app_include_test.h">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/button/button.h">
 			<Option target="ttt"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/includes/button/button.cpp">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/config/config.cpp">
 			<Option target="ttt"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/includes/button/button.h">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/config/config.h">
 			<Option target="ttt"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/includes/button/buttons.cpp">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/engine/engine.cpp">
 			<Option target="ttt"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/includes/button/buttons.h">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/engine/engine.h">
 			<Option target="ttt"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/includes/config/config.cpp">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/header/header.cpp">
 			<Option target="ttt"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/includes/config/config.h">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/header/header.h">
 			<Option target="ttt"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/includes/engine/engine.cpp">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/input_box/input_box.h">
 			<Option target="ttt"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/includes/engine/engine.h">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/linked_list_functions/linked_list_functions.h">
 			<Option target="ttt"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/includes/header/header.cpp">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/lru/lru.h">
 			<Option target="ttt"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/includes/header/header.h">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/node/node.h">
 			<Option target="ttt"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/includes/input_box/input_box.cpp">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/queue/MyQueue.h">
 			<Option target="ttt"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/includes/input_box/input_box.h">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/rpn/rpn.cpp">
 			<Option target="ttt"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/main.cpp">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/rpn/rpn.h">
 			<Option target="ttt"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/CMakeLists.txt">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/shunting_yard/shunting_yard.cpp">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/shunting_yard/shunting_yard.h">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/token/function.cpp">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/token/function.h">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/token/integer.cpp">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/token/integer.h">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/token/leftparen.cpp">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/token/leftparen.h">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/token/operator.cpp">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/token/operator.h">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/token/rightparen.cpp">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/token/rightparen.h">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/token/token.cpp">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/token/token.h">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/token/variable.cpp">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/lib/token/variable.h">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/plot/plot.cpp">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/plot/plot.h">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/tokenizer/tokenizer/tokenizer.cpp">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/tokenizer/tokenizer/tokenizer.h">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/tokenizer/tokenizer_functions/tokenizer_functions.cpp">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/includes/tokenizer/tokenizer_functions/tokenizer_functions.h">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/main.cpp">
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/../../../../opt/homebrew/lib/cmake/SFML/SFMLConfig.cmake">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/../../../../opt/homebrew/lib/cmake/SFML/SFMLConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/../../../../opt/homebrew/lib/cmake/SFML/SFMLConfigDependencies.cmake">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/../../../../opt/homebrew/lib/cmake/SFML/SFMLConfigDependencies.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/../../../../opt/homebrew/lib/cmake/SFML/SFMLConfigVersion.cmake">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/../../../../opt/homebrew/lib/cmake/SFML/SFMLConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/../../../../opt/homebrew/lib/cmake/SFML/SFMLSharedTargets-release.cmake">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/../../../../opt/homebrew/lib/cmake/SFML/SFMLSharedTargets-release.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/Users/ice/Projects/TicTacToeSFML/../../../../opt/homebrew/lib/cmake/SFML/SFMLSharedTargets.cmake">
+		<Unit filename="/Users/ice/Projects/Graphing_Calculator_SFML/../../../../opt/homebrew/lib/cmake/SFML/SFMLSharedTargets.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\opt\homebrew\lib\cmake\SFML\"/>
 		</Unit>
 	</Project>
