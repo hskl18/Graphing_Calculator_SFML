@@ -1,3 +1,0 @@
-/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/CMakeFiles/ttt.dir
-/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/ice/Projects/Graphing_Calculator_SFML/cmake-build-debug/CMakeFiles/rebuild_cache.dir
