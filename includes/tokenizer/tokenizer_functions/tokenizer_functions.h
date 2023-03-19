@@ -3,6 +3,10 @@
 #include "../../lib/queue/MyQueue.h"
 #include "../../lib/stack/MyStack.h"
 #include "../../lib/token/constants.h"
+#include <iostream>
+#include <string>
+#include <algorithm>
+
 using namespace std;
 
 

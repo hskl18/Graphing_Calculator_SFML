@@ -1,12 +1,74 @@
-cmake_minimum_required(VERSION 3.24)
-project(ttt)
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+project(Cal)
 
-set(CMAKE_CXX_STANDARD 17)
+#. . . . . . . . . . . . . . . . . . . .
+include(GNUInstallDirs)
+if(MSVC)
+    add_compile_options(/W4)
+    add_link_options(/W4)
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/bin)
+else()
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+endif()
 
-set(SOURCE_FILES main.cpp)
-add_executable(ttt main.cpp includes/config/config.cpp includes/config/config.h includes/header/header.cpp includes/header/header.h includes/input_box/input_box.h includes/engine/engine.cpp includes/engine/engine.h includes/button/button.cpp includes/button/button.h includes/lib/linked_list_functions/linked_list_functions.h includes/lib/lru/lru.h includes/lib/node/node.h includes/lib/queue/MyQueue.h includes/lib/rpn/rpn.cpp includes/lib/shunting_yard/shunting_yard.cpp includes/lib/token/function.cpp includes/lib/token/integer.cpp includes/lib/token/leftparen.cpp includes/lib/token/operator.cpp includes/lib/token/rightparen.cpp includes/lib/token/token.cpp includes/lib/token/variable.cpp includes/plot/plot.cpp includes/plot/plot.cpp includes/tokenizer/tokenizer/tokenizer.cpp includes/tokenizer/tokenizer_functions/tokenizer_functions.cpp)
-include_directories(/usr/local/include)
 
-find_package(SFML 2.5 COMPONENTS system window graphics network audio REQUIRED)
-include_directories(${SFML_INCLUDE_DIRS})
-target_link_libraries(ttt sfml-system sfml-window sfml-graphics sfml-audio sfml-network)
+# place binaries and libraries according to GNU standards
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
+
+
+
+if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
+endif()
+#. . . . . . . . . . . . . . . . . . . .
+
+# ------------------------------------
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
+)
+
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+# GoogleTest requires at least C++11
+set(CMAKE_CXX_STANDARD 11)
+ 
+enable_testing() 
+
+
+# ------------------------------------
+
+set(SFML_VERSION "2.5.1")
+
+# Declare SFML as an external project
+FetchContent_Declare(
+  SFML
+  URL https://www.sfml-dev.org/files/SFML-${SFML_VERSION}-sources.zip
+)
+
+# Build SFML as part of the project
+FetchContent_MakeAvailable(SFML)
+
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+#   Grab all cpp files from includes folder
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+set(INCLUDES_FOLDER includes)
+FILE(GLOB_RECURSE SOURCE_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}   "${INCLUDES_FOLDER}/*.cpp" )
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+ADD_EXECUTABLE(main
+    main.cpp
+    ${SOURCE_FILES}
+)
+
+
+TARGET_LINK_LIBRARIES(main gtest)
+TARGET_LINK_LIBRARIES(main sfml-graphics sfml-window sfml-system)
+## copy resources file to build
+file(COPY assets DESTINATION ${CMAKE_BINARY_DIR})

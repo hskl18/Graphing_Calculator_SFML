@@ -1,6 +1,8 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 #include <SFML/Graphics.hpp>
+#include <memory>
+#include <cassert>
 #include <unordered_map>
 using namespace std;
 
