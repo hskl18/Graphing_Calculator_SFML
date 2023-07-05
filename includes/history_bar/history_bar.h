@@ -7,9 +7,6 @@
 
 using namespace std;
 
-
-
-
 class HistoryBar
 {
 public:
@@ -25,7 +22,7 @@ public:
         this->_buttons = vector<Button>();
         this->_bar.setPosition(HISTORY_BAR_POS);
         this->_bar.setSize(HISTORY_BAR_SIZE);
-        this->_bar.setFillColor(sf::Color::Magenta);                                                
+        this->_bar.setFillColor(sf::Color(135,206,235));
         for(int i = 0; i < 5; ++i)
         {
             Button btn("Unset", {150, 100}, 20, sf::Color::White, sf::Color::Black);

@@ -6,12 +6,12 @@ Engine::Engine()
     this->_window.create(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "SFML Graphing Calculator");
     this->_window.setKeyRepeatEnabled(true);
 
-    this->_x_axis.setSize({1000, 5});
-    this->_y_axis.setSize({5, 1000});
+    this->_x_axis.setSize({1000, 2});
+    this->_y_axis.setSize({2, 1000});
     this->_x_axis.setPosition(X_AXIS_POS);
     this->_y_axis.setPosition(Y_AXIS_POS);
-    this->_x_axis.setFillColor(sf::Color::Red);
-    this->_y_axis.setFillColor(sf::Color::Red);
+    this->_x_axis.setFillColor(sf::Color(255,204,203));
+    this->_y_axis.setFillColor(sf::Color(255,204,203));
     this->_current_function = "";
     this->_history_bar = HistoryBar();
     this->_config = Config();
@@ -42,13 +42,11 @@ void Engine::_update_input_box()
 {
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
     {
-        //cout << "User selecting input box" << endl;
         this-> _input_box.setSelected(true);
         return;
     }
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
     {
-        //cout << "User quit inputing" << endl;
         this->_input_box.setSelected(false);
         return;
     }
@@ -180,9 +178,6 @@ void Engine::_update_equation()
     if(!this->_error) this->_current_function = func;
     //cout << endl << "Current function is: " << this->_current_function << endl;
 }
-
-
-
 
 
 
