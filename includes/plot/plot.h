@@ -4,28 +4,27 @@
 #include "../lib/rpn/rpn.h"
 #include "../config/config.h"
 #include <SFML/Graphics.hpp>
+#include <array>
+#include <cstdlib>
 
 
 struct ColorGenerator
 {
-    unordered_map<int, sf::Color> _color_map;
-    ColorGenerator()
-    {
-        _color_map[0] = sf::Color::Yellow;
-        _color_map[1] = sf::Color::White;
-        _color_map[2] = sf::Color::Blue;
-        _color_map[3] = sf::Color::Green;
-        _color_map[4] = sf::Color::Cyan;
-        _color_map[5] = sf::Color(255, 153, 153);
-        _color_map[6] = sf::Color(255, 128, 0);
-        _color_map[7] = sf::Color(102, 0, 204);
-        _color_map[8] = sf::Color(76, 0, 153);
-    }
+    std::array<sf::Color, 9> _colors = {
+        sf::Color(94, 234, 212),
+        sf::Color(248, 250, 252),
+        sf::Color(125, 211, 252),
+        sf::Color(196, 181, 253),
+        sf::Color(253, 186, 116),
+        sf::Color(244, 114, 182),
+        sf::Color(163, 230, 53),
+        sf::Color(251, 191, 36),
+        sf::Color(165, 180, 252),
+    };
     sf::Color get_rand_color()
     {
-        return this->_color_map[rand() % 9];
+        return this->_colors[static_cast<std::size_t>(std::rand()) % this->_colors.size()];
     }
-    ~ColorGenerator(){}
 };
 
 class Plot
@@ -37,6 +36,9 @@ public:
     RPN _rpn;
     Plot(){}
     Plot(Queue<Token*> infix);
+    static sf::Vector2f map_point(float x, float y, float low, float high,
+                                  float zoom_factor);
+    static bool is_visible(const sf::Vector2f& point);
     sf::VertexArray operator()(float low, float high, float zoom_factor, bool& error);
     ~Plot();
 };

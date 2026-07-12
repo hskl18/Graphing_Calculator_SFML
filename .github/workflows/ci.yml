@@ -26,7 +26,7 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo apt-get update
-          sudo apt-get install -y libsfml-dev
+          sudo apt-get install -y libsfml-dev xvfb
 
       - name: Install SFML on macOS
         if: runner.os == 'macOS'
@@ -54,3 +54,31 @@ jobs:
 
       - name: Test
         run: ctest --test-dir build -C Release --output-on-failure
+
+      - name: Smoke test desktop startup
+        if: runner.os == 'Linux'
+        run: xvfb-run -a ./build/graphing_calculator --smoke-test
+
+  sanitizers:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Configure headless sanitizers
+        run: >-
+          cmake -S . -B build-sanitized
+          -DGRAPHING_CALCULATOR_BUILD_APP=OFF
+          -DBUILD_TESTING=ON
+          -DCMAKE_BUILD_TYPE=Debug
+          -DCMAKE_COMPILE_WARNING_AS_ERROR=ON
+          -DGRAPHING_CALCULATOR_ENABLE_SANITIZERS=ON
+
+      - name: Build
+        run: cmake --build build-sanitized --parallel
+
+      - name: Test
+        run: ctest --test-dir build-sanitized --output-on-failure

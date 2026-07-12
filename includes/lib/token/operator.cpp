@@ -15,7 +15,7 @@ int Operator::tokenType() const
 
 void Operator::set_associativity()
 {
-    if(this->_operator == "^")
+    if(this->_operator == "^" || this->_operator == "~")
     {
         this->_associativity = false;
         return;
@@ -26,6 +26,7 @@ void Operator::set_associativity()
 int Operator::precedence() const
 {
     if(this->_operator == "^") return P_3;
+    if(this->_operator == "~") return P_UNARY;
     if(this->_operator == "+" || this->_operator == "-") return P_1;
     return P_2;
 }
@@ -40,6 +41,16 @@ void Operator::Print(ostream& outs) const
 string Operator::get_operator() const
 {
     return this->_operator;
+}
+
+int Operator::get_args() const
+{
+    return this->_operator == "~" ? 1 : 2;
+}
+
+bool Operator::is_prefix() const
+{
+    return this->_operator == "~";
 }
 
 

@@ -24,7 +24,7 @@ public:
 
 	void setPosition(sf::Vector2f point);
 
-	void drawTo(sf::RenderWindow &window);
+	void drawTo(sf::RenderTarget &window);
 
 	// Check if the mouse is within the bounds of the button:
 	bool isMouseOver(sf::RenderWindow &window);
@@ -34,6 +34,8 @@ private:
 
 	float btnWidth;
 	float btnHeight;
+
+	void centerText();
 };
 
 #endif // !BUTTON_H

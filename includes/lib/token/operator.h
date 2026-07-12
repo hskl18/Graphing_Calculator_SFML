@@ -28,6 +28,8 @@ public:
     bool get_associativity(){return this->_associativity;}
     // member functions
     string get_operator() const;
+    int get_args() const;
+    bool is_prefix() const;
     
     // couts
     friend ostream& operator <<(ostream &outs, const Operator &op);

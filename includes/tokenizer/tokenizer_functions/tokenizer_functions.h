@@ -17,7 +17,7 @@ using namespace std;
 Queue<int> _tokenize(string input, Queue<string>& tokens);
 
 // get a token at a certain index of input string
-void _get_token(string input, int& index, string& token, int& token_type, int previous_type);
+void _get_token(string input, int& index, string& token, int& token_type);
 
 // remove space
 
@@ -29,9 +29,6 @@ bool _is_left_paren(string input, int pos, string& left_paren);
 bool _is_right_paren(string input, int pos, string& right_paren);
 bool _is_function(string str, int pos, string& func);
 bool _is_digit(char c);
-bool _is_number(string str, int pos, string& number, int prev_type);
-bool _is_unary_minus(string input, int pos, int prev_type);
+bool _is_number(string str, int pos, string& number);
 bool _is_variable(string str, int pos, string& var);
 #endif // !TOKENIZER_FUNCTIONS_H
-
-

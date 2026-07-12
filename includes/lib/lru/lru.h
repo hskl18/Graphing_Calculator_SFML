@@ -52,6 +52,10 @@ public:
     }
     void put(K key, V val)
     {
+        if(this->_capacity == 0)
+        {
+            return;
+        }
         if(this->_map.count(key))
         {
             this->delete_key(key);

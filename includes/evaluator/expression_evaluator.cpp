@@ -7,16 +7,6 @@
 #include <cmath>
 #include <exception>
 
-namespace {
-
-void delete_tokens(Queue<Token*>& tokens) {
-    while (!tokens.empty()) {
-        delete tokens.pop();
-    }
-}
-
-} // namespace
-
 EvaluationResult ExpressionEvaluator::evaluate(
     const std::string& expression,
     double x
@@ -35,22 +25,18 @@ EvaluationResult ExpressionEvaluator::evaluate(
         Queue<Token*> postfix = shunting_yard.postfix();
 
         if (shunting_yard.is_error() || postfix.empty()) {
-            delete_tokens(infix);
             return {false, 0.0, "Expression has invalid syntax"};
         }
 
         RPN evaluator(postfix);
         const double value = evaluator.rpn(x);
         const bool valid = !evaluator.is_error() && std::isfinite(value);
-        delete_tokens(infix);
-
         if (!valid) {
             return {false, 0.0, "Expression could not be evaluated"};
         }
 
         return {true, value, {}};
     } catch (const std::exception& error) {
-        delete_tokens(infix);
         return {false, 0.0, error.what()};
     }
 }

@@ -19,10 +19,12 @@ public:
 	{
 		rect.setSize(box_size); //sf::Vector2f(300, 100)
 		rect.setFillColor(box_color); //sf::Color::White
+		rect.setOutlineColor(sf::Color(71, 85, 105));
+		rect.setOutlineThickness(2.0f);
 		rect.setPosition(position); //{680, 840}
 		textbox.setCharacterSize(font_size);
 		textbox.setFillColor(text_color);
-		textbox.setPosition(position);
+		textbox.setPosition(position + sf::Vector2f(18.0f, 15.0f));
 		isSelected = sel;
 
 		// Check if the textbox is selected upon creation and display it accordingly:
@@ -55,6 +57,7 @@ public:
 	// Change selected state:
 	void setSelected(bool sel) {
 		isSelected = sel;
+		textbox.setString(text.str() + (sel ? "|" : ""));
 
 		// If not selected, remove the '_' at the end:
 		if (!sel) {
@@ -70,8 +73,14 @@ public:
 	std::string getText() {
 		return text.str();
 	}
+	void setText(const std::string& value) {
+		text.str("");
+		text.clear();
+		text << value;
+		textbox.setString(value + (isSelected ? "|" : ""));
+	}
 	sf::Text& get_text_box(){return this->textbox;}
-	void drawTo(sf::RenderWindow &window) {
+	void drawTo(sf::RenderTarget &window) {
 
 		window.draw(rect);
 		window.draw(textbox);

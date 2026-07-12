@@ -1,5 +1,7 @@
 #include "tokenizer_functions.h"
 
+#include <cctype>
+
 
 string remove_space(string str)
 {
@@ -11,16 +13,29 @@ string remove_space(string str)
 
 Queue<int> _tokenize(string input, Queue<string>& tokens)
 {
-    input = remove_space(input);
     int index = 0;  
     Queue<int> token_types;
     while(index < static_cast<int>(input.length()))
-    {   
+    {
+        if (std::isspace(static_cast<unsigned char>(input[index])))
+        {
+            index++;
+            continue;
+        }
         string token = "";
         int token_type = 0;
 
         int prev_type = (!token_types.empty()) ? token_types.back() : -1;
-        _get_token(input, index, token, token_type, prev_type);
+        _get_token(input, index, token, token_type);
+
+        if (
+            token == "-" &&
+            (prev_type == -1 || prev_type == OPERATOR ||
+             prev_type == LPAREN || prev_type == TOKEN)
+        )
+        {
+            token = "~";
+        }
 
         
         if(token == "")
@@ -38,7 +53,7 @@ Queue<int> _tokenize(string input, Queue<string>& tokens)
 
 
 
-void _get_token(string input, int& index, string& token, int& token_type, int previous_type)
+void _get_token(string input, int& index, string& token, int& token_type)
 {
     token = "";
     string tk1, tk2, tk3, tk4, tk5, tk6;
@@ -68,7 +83,7 @@ void _get_token(string input, int& index, string& token, int& token_type, int pr
         return;
     }
 
-    bool is_num = _is_number(input, index, tk5, previous_type);
+    bool is_num = _is_number(input, index, tk5);
     if(is_num) 
     {
         token = tk5;
@@ -307,47 +322,33 @@ bool _is_digit(char c)
 }
 
 
-// check for negative sign
-bool _is_unary_minus(string input, int pos, int prev_type)
-{
-    bool is_unary_check = ((pos == 0) || (prev_type == LPAREN) || (prev_type == OPERATOR) || (prev_type == TOKEN));
-    if(input[pos] == '-' && is_unary_check) return true;
-    return false;
-}
-
-
-
-
 // check if it's number or not
-bool _is_number(string str, int pos, string& number, int prev_type)
+bool _is_number(string str, int pos, string& number)
 {
+    if(pos < 0 || pos >= static_cast<int>(str.length())) return false;
+    if(!_is_digit(str[pos]) && str[pos] != '.') return false;
 
-    if(!_is_digit(str[pos]) && !_is_unary_minus(str, pos, prev_type)) return false;
-       
-
-    number = "";
- 
-    if(str[pos] == '-')
+    bool saw_digit = false;
+    bool saw_decimal = false;
+    int cursor = pos;
+    while(cursor < static_cast<int>(str.length()))
     {
-        number += str[pos];
-        pos++;
-    }
-    for(int i = pos; i < static_cast<int>(str.length()); ++i)
-    {
-        if(!_is_digit(str[i]) && str[i] != '.' && str[i] != ' ') break;
-        
-        number += str[i];
- 
-        pos++;
-    }
-    //cout << number << endl;
-    if(number[0] == '-')
-    {
-        for(std::size_t i = 1; i < number.length(); ++i)
+        const char current = str[cursor];
+        if(_is_digit(current))
         {
-            if(_is_digit(number[i])) return true;
+            saw_digit = true;
+            number += current;
+            cursor++;
+            continue;
         }
-        return false;
+        if(current == '.' && !saw_decimal)
+        {
+            saw_decimal = true;
+            number += current;
+            cursor++;
+            continue;
+        }
+        break;
     }
-    return true;
+    return saw_digit;
 }

@@ -29,6 +29,7 @@ double RPN::operator()(double value)
 // called by operator ()
 double RPN::rpn(double value)
 {
+    this->_error = false;
     Stack<double> output;
     Queue<Token*> queue_cache = this->_queue;
     while(!queue_cache.empty())
@@ -48,14 +49,24 @@ double RPN::rpn(double value)
         }
         if(token->tokenType() == OPERATOR)
         {
-            if(output.size() < OPERATOR_NUM_NEEDED) 
+            Operator* operator_temp = static_cast<Operator*>(token);
+            if (operator_temp->get_args() == 1)
+            {
+                if (output.empty())
+                {
+                    this->_error = true;
+                    return -1;
+                }
+                output.push(-output.pop());
+                continue;
+            }
+            if(output.size() < OPERATOR_NUM_NEEDED)
             {
                 this->_error = true;
                 return -1;
             }
             double secondNum = output.pop();
             double firstNum = output.pop();
-            Operator* operator_temp = static_cast<Operator*>(token);
             double result = this->evaluate(firstNum, secondNum, operator_temp->get_operator());
             output.push(result);
             continue;
@@ -100,7 +111,6 @@ double RPN::evaluate(double num1, double num2, string operation)
     if(operation == "/") return num1 / num2;
     return pow(num1, num2);
 }
-
 
 
 

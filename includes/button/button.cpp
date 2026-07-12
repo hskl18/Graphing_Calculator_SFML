@@ -7,6 +7,8 @@ Button::Button() {
 Button::Button(std::string btnText, sf::Vector2f buttonSize, int charSize, sf::Color bgColor, sf::Color textColor) {
 	button.setSize(buttonSize);
 	button.setFillColor(bgColor);
+	button.setOutlineColor(sf::Color(51, 65, 85));
+	button.setOutlineThickness(1.0f);
 
 	// Get these for later use:
 	btnWidth = buttonSize.x;
@@ -18,7 +20,11 @@ Button::Button(std::string btnText, sf::Vector2f buttonSize, int charSize, sf::C
 }
 
 void Button::setText(std::string t) {
+	if (t.size() > 19) {
+		t = t.substr(0, 16) + "...";
+	}
 	text.setString(t);
+	centerText();
 }
 
 void Button::setSize(sf::Vector2f s) {
@@ -31,6 +37,7 @@ void Button::setCharSize(int c) {
 
 void Button::setFont(sf::Font &fonts) {
 	text.setFont(fonts);
+	centerText();
 }
 
 void Button::setBackColor(sf::Color color) {
@@ -43,16 +50,19 @@ void Button::setTextColor(sf::Color color) {
 
 void Button::setPosition(sf::Vector2f point) {
 	button.setPosition(point);
-
-	// Center text on button:
-	float div = 2.0 + btnHeight / btnWidth;
-
-	float xPos = (point.x + btnWidth / div) - (text.getLocalBounds().width / 2);
-	float yPos = (point.y + btnHeight / div) - (text.getLocalBounds().height / 2);
-	text.setPosition(xPos - 50, yPos);
+	centerText();
 }
 
-void Button::drawTo(sf::RenderWindow &window) {
+void Button::centerText() {
+	const sf::FloatRect bounds = text.getLocalBounds();
+	const sf::Vector2f position = button.getPosition();
+	text.setPosition(
+		position.x + (btnWidth - bounds.width) / 2.0f - bounds.left,
+		position.y + (btnHeight - bounds.height) / 2.0f - bounds.top - 2.0f
+	);
+}
+
+void Button::drawTo(sf::RenderTarget &window) {
 	window.draw(button);
 	window.draw(text);
 }
