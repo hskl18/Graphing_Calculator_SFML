@@ -12,22 +12,27 @@ class HistoryBar
 public:
     HistoryBar()
     {
-        this->_title.setPosition({1025, 25});
-        this->_title.setCharacterSize(35);
-        this->_title.setFillColor(sf::Color::Blue);
-        this->_title.setString("History: ");
+        Config config;
+        sf::Font& font = config.get_font(UI_FONT);
+
+        this->_title.setPosition({1020, 28});
+        this->_title.setCharacterSize(22);
+        this->_title.setFillColor(sf::Color(226, 232, 240));
+        this->_title.setString("RECENT GRAPHS");
+        this->_title.setFont(font);
 
         this->_bar.setSize(HISTORY_BAR_SIZE);
         this->_bar.setPosition(HISTORY_BAR_POS);
         this->_buttons = vector<Button>();
         this->_bar.setPosition(HISTORY_BAR_POS);
         this->_bar.setSize(HISTORY_BAR_SIZE);
-        this->_bar.setFillColor(sf::Color(135,206,235));
+        this->_bar.setFillColor(sf::Color(22, 32, 49));
         for(int i = 0; i < 5; ++i)
         {
-            Button btn("Unset", {150, 100}, 20, sf::Color::White, sf::Color::Black);
-            float y = 100 + 180 * i ;
-            btn.setPosition({1025, y});
+            Button btn("Empty", {160, 88}, 15, sf::Color(30, 43, 64), sf::Color(203, 213, 225));
+            btn.setFont(font);
+            float y = 92 + 148 * i ;
+            btn.setPosition({1020, y});
             this->_buttons.push_back(btn);
         }
     }
@@ -36,20 +41,13 @@ public:
     {
         this->set_lru_to_history(vec);
     }
-    void drawTo(sf::RenderWindow &window) {
-        Config config;
-        //vector<string> vec = {"A", "B", "C", "D", "E"};
-        sf::Font font = config.get_font(ARIAL);
+    void drawTo(sf::RenderTarget &window) {
         window.draw(_bar);
-        this->_title.setFont(font);
         window.draw(this->_title);
 
-        //this->set_lru_to_history(vec);
         for(int i = 4; i >= 0; --i)
         {
-            Button btn = this->_buttons[i];
-            btn.setFont(font);
-            btn.drawTo(window);
+            this->_buttons[i].drawTo(window);
         }		
         
 	}
@@ -57,12 +55,10 @@ public:
     {
         for(int i = 0; i < 5; ++i)
         {
-            if(this->_buttons[i].isMouseOver(window))
-            {
-                this->_buttons[i].setBackColor(sf::Color::Yellow);
-                return;
-            }
-            this->_buttons[i].setBackColor(sf::Color::White);
+            const bool hovered = this->_buttons[i].isMouseOver(window);
+            this->_buttons[i].setBackColor(
+                hovered ? sf::Color(41, 77, 87) : sf::Color(30, 43, 64)
+            );
         }
     }
     bool isClicked(sf::Event& input, sf::RenderWindow& window, int& index)

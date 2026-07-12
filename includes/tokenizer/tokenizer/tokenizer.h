@@ -8,8 +8,11 @@
 #include "../../lib/token/operator.h"
 #include "../../lib/token/leftparen.h"
 #include "../../lib/token/rightparen.h"
+#include "../../lib/token/comma.h"
 #include "../tokenizer_functions/tokenizer_functions.h"
 #include "../../lib/token/variable.h"
+#include <memory>
+#include <vector>
 
 
 
@@ -24,15 +27,17 @@ private:
 
     // output
     Queue<Token*> _output;
+    vector<unique_ptr<Token>> _owned_tokens;
 
     // private helper
-    void tokenize(string input);
-    string remove_space(string str);
+    void tokenize(const string& input);
 
 public:
-    Tokenizer(string input);
-    ~Tokenizer();
-    void set_input(string input);
+    explicit Tokenizer(const string& input);
+    ~Tokenizer() = default;
+    Tokenizer(const Tokenizer&) = delete;
+    Tokenizer& operator=(const Tokenizer&) = delete;
+    void set_input(const string& input);
     Queue<Token*> infix();
    
   

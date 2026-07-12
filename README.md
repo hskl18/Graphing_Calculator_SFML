@@ -8,7 +8,7 @@ It tokenizes a mathematical expression, converts infix notation to postfix notat
 ## Features
 
 - Graphs expressions containing the variable `x`.
-- Supports `+`, `-`, `*`, `/`, and `^` with parentheses and unary negative values.
+- Supports `+`, `-`, `*`, `/`, and `^` with parentheses and a real unary minus operator.
 - Supports `sin`, `cos`, `tan`, `cot`, `sec`, `csc`, inverse trigonometric functions, hyperbolic functions, `ln`, `log`, `abs`, `min`, and `max`.
 - Keeps the five most recent valid expressions in an LRU history sidebar.
 - Provides keyboard zoom controls and mouse-selectable history entries.
@@ -26,7 +26,7 @@ It tokenizes a mathematical expression, converts infix notation to postfix notat
 | `includes/engine` | Owns the window loop, keyboard input, zoom state, and rendering. |
 | `includes/lib/lru` | Stores recent valid expressions for the history sidebar. |
 
-Additional implementation notes are available in [design.txt](design.txt).
+The exact grammar, ownership model, asset path, and evidence boundaries are documented in [DESIGN.md](DESIGN.md).
 The canonical repository is [hskl18/Graphing_Calculator_SFML](https://github.com/hskl18/Graphing_Calculator_SFML).
 
 ## Requirements
@@ -62,7 +62,14 @@ cmake --build build --parallel
 ./build/graphing_calculator
 ```
 
-Assets are resolved from the repository at compile time, so the application can be launched from any working directory.
+Runtime assets are copied beside the executable, so the application can launch from any working directory and the source checkout does not need to remain at its original path.
+
+To create a relocatable local install directory:
+
+```bash
+cmake --install build --prefix dist
+./dist/graphing_calculator
+```
 
 ## Controls
 
@@ -80,8 +87,8 @@ Assets are resolved from the repository at compile time, so the application can 
 ctest --test-dir build --output-on-failure
 ```
 
-The headless suite verifies precedence, parentheses, variables, supported functions, unary values, invalid syntax, non-finite results, and LRU eviction behavior.
-CI compiles the full SFML application on Ubuntu and macOS, then runs the headless suite on both platforms.
+The headless suites verify the complete documented function set, strict numbers, precedence, variables, unary minus, function arity, invalid adjacency, delimiters, non-finite results, and LRU eviction behavior.
+CI compiles the full SFML application on Ubuntu and macOS, graphs the startup expression in a virtual display, verifies history-based error recovery, runs a packaged-resource smoke, and exercises the headless suite under AddressSanitizer and UndefinedBehaviorSanitizer.
 
 To work only on the evaluator without installing SFML, disable the desktop target.
 
@@ -93,12 +100,30 @@ cmake --build build-core --parallel
 ctest --test-dir build-core --output-on-failure
 ```
 
+## Expression grammar
+
+- Accepted number forms include `1`, `1.`, `.5`, and `1.5`.
+- Functions require parentheses.
+- `min` and `max` require exactly two comma-separated arguments.
+- Unary minus supports values, variables, groups, and functions.
+- Unary minus binds below exponentiation, so `-2^2` is `-4` while `(-2)^2` is `4`.
+- Implicit multiplication is not supported.
+- Scientific notation is not supported.
+
+Malformed numbers, wrong function arity, repeated commas, invalid adjacency, and unmatched delimiters fail closed.
+
+## Asset license
+
+The packaged Poppins Regular font is distributed under the SIL Open Font License 1.1.
+Its license and provenance are recorded in [`assets/THIRD_PARTY_NOTICES.md`](assets/THIRD_PARTY_NOTICES.md).
+Decorative UI graphics are drawn with SFML shapes rather than redistributed image assets.
+
 ## Limitations
 
 This is an educational graphing calculator rather than a computer algebra system.
 It supports one variable, uses floating-point evaluation, and samples points at a fixed interval.
 It does not perform symbolic simplification, equation solving, discontinuity detection, implicit multiplication, or export to image and data formats.
-The automated suite validates the evaluator and LRU behavior but does not automate window interaction or visual rendering.
+The automated suite validates the evaluator, plotting bounds, ownership, LRU behavior, startup graph, history-based error recovery, full application build, and packaged font loading but does not automate complete pointer interaction or pixel-level rendering.
 
 ## License
 

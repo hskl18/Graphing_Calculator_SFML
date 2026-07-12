@@ -20,6 +20,7 @@ enum PRECEDENCE
 {
   P_1 = 10,
   P_2 = 20,
+  P_UNARY = 25,
   P_3 = 30,
   P_4 = 40,
 };

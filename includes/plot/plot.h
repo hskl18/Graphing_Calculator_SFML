@@ -37,6 +37,9 @@ public:
     RPN _rpn;
     Plot(){}
     Plot(Queue<Token*> infix);
+    static sf::Vector2f map_point(float x, float y, float low, float high,
+                                  float zoom_factor);
+    static bool is_visible(const sf::Vector2f& point);
     sf::VertexArray operator()(float low, float high, float zoom_factor, bool& error);
     ~Plot();
 };

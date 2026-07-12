@@ -33,6 +33,7 @@ Queue<Token*> ShuntingYard::postfix(const Queue<Token*>& input_q)
 // called by postfix() 
 Queue<Token*> ShuntingYard::shunting_yard()
 {
+    this->_error = false;
     Queue<Token*> input_queue = this->_queue;
     Queue<Token*> output_queue;
     Stack<Token*> operator_stack;
@@ -106,6 +107,11 @@ Queue<Token*> ShuntingYard::shunting_yard()
         {
             //cout << "Operator" << endl;
             Operator* op = static_cast<Operator*>(token);
+            if (op->is_prefix())
+            {
+                operator_stack.push(token);
+                continue;
+            }
             while(!operator_stack.empty() && operator_stack.top()->tokenType() != LPAREN)
             {
                 bool check_greater_precedence = (operator_stack.top()->precedence() > token->precedence());
@@ -117,6 +123,22 @@ Queue<Token*> ShuntingYard::shunting_yard()
             operator_stack.push(token);
             continue;
         }
+        if(token->tokenType() == TOKEN)
+        {
+            while(!operator_stack.empty() && operator_stack.top()->tokenType() != LPAREN)
+            {
+                output_queue.push(operator_stack.pop());
+            }
+            if(operator_stack.empty())
+            {
+                this->_error = true;
+                return output_queue;
+            }
+            continue;
+        }
+
+        this->_error = true;
+        return output_queue;
 
     }
     while(!operator_stack.empty())
@@ -131,7 +153,6 @@ Queue<Token*> ShuntingYard::shunting_yard()
     }
     return output_queue;
 }
-
 
 
 

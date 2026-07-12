@@ -1,74 +1,129 @@
 #include "config.h"
 
+#include <array>
+#include <climits>
+#include <cstdint>
+#include <filesystem>
+#include <stdexcept>
 #include <string>
+#include <system_error>
+#include <vector>
 
-#ifndef GRAPHING_CALCULATOR_ASSET_DIR
-#define GRAPHING_CALCULATOR_ASSET_DIR "assets"
+#if defined(_WIN32)
+#include <windows.h>
+#elif defined(__APPLE__)
+#include <mach-o/dyld.h>
+#elif defined(__linux__)
+#include <unistd.h>
 #endif
 
+namespace {
 
-Config::Config()
-{
-    this->_set_texture();
-    this->_set_font();
-}
-
-Config::~Config(){}
-
-
-std::shared_ptr<sf::Texture> Config::_get_texture(int key)
-{
-    if(this->_texture_map.find(key) != this->_texture_map.end()) 
-    {
-        return this->_texture_map[key];
+std::filesystem::path normalized_executable_directory(
+    const std::filesystem::path& executable
+) {
+    std::error_code error;
+    std::filesystem::path normalized = std::filesystem::weakly_canonical(
+        executable,
+        error
+    );
+    if (error) {
+        error.clear();
+        normalized = std::filesystem::absolute(executable, error);
     }
-    return nullptr;
-}
-
-std::shared_ptr<sf::Font> Config::_get_font(int key)
-{
-    if(this->_font_map.find(key) != this->_font_map.end()) 
-    {
-        return this->_font_map[key];
+    if (error) {
+        throw std::runtime_error(
+            "Unable to resolve the graphing calculator executable path: " +
+            error.message()
+        );
     }
-    return nullptr;
+    return normalized.parent_path();
 }
 
-
-
-sf::Texture& Config::get_texture(int index)
-{
-    std::shared_ptr<sf::Texture> texture = this->_get_texture(index);
-    assert(texture != nullptr && "Getting non existed texture");
-    return *texture;
+std::filesystem::path executable_directory() {
+#if defined(_WIN32)
+    std::vector<wchar_t> buffer(32768);
+    const DWORD length = GetModuleFileNameW(
+        nullptr,
+        buffer.data(),
+        static_cast<DWORD>(buffer.size())
+    );
+    if (length == 0 || length == buffer.size()) {
+        throw std::runtime_error(
+            "Unable to resolve the graphing calculator executable path"
+        );
+    }
+    return normalized_executable_directory(
+        std::filesystem::path(std::wstring(buffer.data(), length))
+    );
+#elif defined(__APPLE__)
+    std::uint32_t size = PATH_MAX;
+    std::vector<char> buffer(size);
+    if (_NSGetExecutablePath(buffer.data(), &size) != 0) {
+        buffer.resize(size);
+        if (_NSGetExecutablePath(buffer.data(), &size) != 0) {
+            throw std::runtime_error(
+                "Unable to resolve the graphing calculator executable path"
+            );
+        }
+    }
+    return normalized_executable_directory(buffer.data());
+#elif defined(__linux__)
+    std::array<char, PATH_MAX> buffer{};
+    const ssize_t length = readlink(
+        "/proc/self/exe",
+        buffer.data(),
+        buffer.size() - 1
+    );
+    if (length <= 0) {
+        throw std::runtime_error(
+            "Unable to resolve the graphing calculator executable path"
+        );
+    }
+    return normalized_executable_directory(
+        std::filesystem::path(std::string(buffer.data(), length))
+    );
+#else
+    throw std::runtime_error(
+        "Executable-relative asset loading is not supported on this platform"
+    );
+#endif
 }
 
-
-sf::Font& Config::get_font(int index)
-{
-    std::shared_ptr<sf::Font> font = this->_get_font(index);
-    assert(font != nullptr && "Getting non existed font");
-    return *font;
+std::filesystem::path runtime_asset_path(const std::string& filename) {
+    return executable_directory() / "assets" / filename;
 }
 
+} // namespace
 
-
-
-void Config::_set_texture()
-{
-    const std::string asset_dir = GRAPHING_CALCULATOR_ASSET_DIR;
-    auto t1 = std::make_shared<sf::Texture>();
-    t1->loadFromFile(asset_dir + "/cat1.png");
-    this->_texture_map[BACK_GROUND] = t1;
-    auto t2 = std::make_shared<sf::Texture>();
-    t2->loadFromFile(asset_dir + "/dog.png");
-    this->_texture_map[ERROR_IMAGE] = t2;
+Config::Config() {
+    static_cast<void>(this->_ui_font());
 }
 
-void Config::_set_font()
-{
-    const std::string asset_dir = GRAPHING_CALCULATOR_ASSET_DIR;
-    auto f1 = std::make_shared<sf::Font>();
-    f1->loadFromFile(asset_dir + "/arial.ttf");
-    this->_font_map[ARIAL] = f1;
+sf::Font& Config::_ui_font() {
+    static sf::Font font = [] {
+        const std::filesystem::path path = runtime_asset_path(
+            "Poppins-Regular.ttf"
+        );
+        sf::Font loaded;
+        if (!loaded.loadFromFile(path.string())) {
+            throw std::runtime_error(
+                "Unable to load the packaged UI font at " + path.string() +
+                ". Keep the assets directory beside the executable or rebuild "
+                "the application."
+            );
+        }
+        return loaded;
+    }();
+    return font;
+}
+
+sf::Font& Config::get_font(int index) {
+    if (index != UI_FONT) {
+        throw std::out_of_range(
+            "Unknown graphing calculator font resource: " +
+            std::to_string(index)
+        );
+    }
+    return this->_ui_font();
 }
