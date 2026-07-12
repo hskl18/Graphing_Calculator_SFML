@@ -7,7 +7,7 @@ RightParen::RightParen()
 
 RightParen::~RightParen(){}   
 
-const int RightParen::tokenType() const
+int RightParen::tokenType() const
 {
     return RPAREN;
 }

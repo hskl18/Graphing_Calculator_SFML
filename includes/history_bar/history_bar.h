@@ -80,7 +80,7 @@ public:
 private:    
     void set_lru_to_history(const vector<string>& history)
     {
-        for(int i = 0; i < this->_buttons.size(); ++i)
+        for(std::size_t i = 0; i < this->_buttons.size(); ++i)
         {
             this->_buttons[i].setText(history[i]);
         }

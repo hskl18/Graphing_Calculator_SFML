@@ -7,7 +7,7 @@ Variable::Variable()
 
 Variable::~Variable(){}   
 
-const int Variable::tokenType() const
+int Variable::tokenType() const
 {
     return VAR;
 }

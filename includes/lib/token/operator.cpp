@@ -8,7 +8,7 @@ Operator::Operator(string op)
 
 Operator::~Operator(){}   
 
-const int Operator::tokenType() const
+int Operator::tokenType() const
 {
     return OPERATOR;
 }
@@ -23,7 +23,7 @@ void Operator::set_associativity()
     this->_associativity = true;
 }
 
-const int Operator::precedence() const
+int Operator::precedence() const
 {
     if(this->_operator == "^") return P_3;
     if(this->_operator == "+" || this->_operator == "-") return P_1;

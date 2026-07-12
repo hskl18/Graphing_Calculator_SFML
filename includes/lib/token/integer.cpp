@@ -7,12 +7,12 @@ Integer::Integer(double num)
 
 Integer::~Integer(){}   
 
-const int Integer::tokenType() const
+int Integer::tokenType() const
 {
     return INTEGER;
 }
 
-const double Integer::get_integer() const
+double Integer::get_integer() const
 {
     return this->_integer;
 }

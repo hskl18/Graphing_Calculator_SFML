@@ -14,7 +14,7 @@ private:
 public:
     LeftParen();
     ~LeftParen();
-    const int tokenType() const override;
+    int tokenType() const override;
     void Print(ostream &outs) const override;
     friend ostream& operator <<(ostream &outs, const LeftParen &lp);
     friend ostream& operator <<(ostream& outs, const LeftParen* lp);

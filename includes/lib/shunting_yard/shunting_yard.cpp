@@ -108,7 +108,6 @@ Queue<Token*> ShuntingYard::shunting_yard()
             Operator* op = static_cast<Operator*>(token);
             while(!operator_stack.empty() && operator_stack.top()->tokenType() != LPAREN)
             {
-                Operator* top_token = static_cast<Operator*>(operator_stack.top());
                 bool check_greater_precedence = (operator_stack.top()->precedence() > token->precedence());
                 bool check_equal_precedence = ((operator_stack.top()->precedence() == token->precedence()) && op->get_associativity());
                 if(!(check_greater_precedence || check_equal_precedence)) break;
@@ -132,7 +131,6 @@ Queue<Token*> ShuntingYard::shunting_yard()
     }
     return output_queue;
 }
-
 
 
 

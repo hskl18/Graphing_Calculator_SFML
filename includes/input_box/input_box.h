@@ -60,7 +60,7 @@ public:
 		if (!sel) {
 			std::string t = text.str();
 			std::string newT = "";
-			for (int i = 0; i < t.length(); i++) {
+			for (std::size_t i = 0; i < t.length(); i++) {
 				newT += t[i];
 			}
 			textbox.setString(newT);
@@ -107,14 +107,14 @@ private:
 	std::ostringstream text;
 	bool isSelected = false;
 	bool hasLimit = false;
-	int limit = 0;
+	std::size_t limit = 0;
 	sf::RectangleShape rect;
 
 	// Delete the last character of the text:
 	void deleteLastChar() {
 		std::string t = text.str();
 		std::string newT = "";
-		for (int i = 0; i < t.length() - 1; i++) {
+		for (std::size_t i = 0; i + 1 < t.length(); i++) {
 			newT += t[i];
 		}
 		text.str("");

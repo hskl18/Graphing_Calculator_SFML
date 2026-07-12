@@ -1,5 +1,10 @@
 #include "config.h"
 
+#include <string>
+
+#ifndef GRAPHING_CALCULATOR_ASSET_DIR
+#define GRAPHING_CALCULATOR_ASSET_DIR "assets"
+#endif
 
 
 Config::Config()
@@ -51,17 +56,19 @@ sf::Font& Config::get_font(int index)
 
 void Config::_set_texture()
 {
+    const std::string asset_dir = GRAPHING_CALCULATOR_ASSET_DIR;
     auto t1 = std::make_shared<sf::Texture>();
-    t1->loadFromFile("../assets/cat1.png");
+    t1->loadFromFile(asset_dir + "/cat1.png");
     this->_texture_map[BACK_GROUND] = t1;
     auto t2 = std::make_shared<sf::Texture>();
-    t2->loadFromFile("../assets/dog.png");
+    t2->loadFromFile(asset_dir + "/dog.png");
     this->_texture_map[ERROR_IMAGE] = t2;
 }
 
 void Config::_set_font()
 {
+    const std::string asset_dir = GRAPHING_CALCULATOR_ASSET_DIR;
     auto f1 = std::make_shared<sf::Font>();
-    f1->loadFromFile("../assets/arial.ttf");
+    f1->loadFromFile(asset_dir + "/arial.ttf");
     this->_font_map[ARIAL] = f1;
 }

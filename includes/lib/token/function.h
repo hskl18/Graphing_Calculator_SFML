@@ -18,8 +18,8 @@ private:
 public:
     Function(string func);
     ~Function();
-    const int tokenType() const override;
-    const int precedence() const override;
+    int tokenType() const override;
+    int precedence() const override;
     void Print(ostream &outs) const override;
 
     // member functions

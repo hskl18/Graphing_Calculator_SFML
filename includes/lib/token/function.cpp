@@ -8,14 +8,14 @@ Function::Function(string func)
 
 Function::~Function(){}   
 
-const int Function::tokenType() const
+int Function::tokenType() const
 {
     return FUNCTION;
 }
 
 
 
-const int Function::precedence() const
+int Function::precedence() const
 {
     return P_4;
 }

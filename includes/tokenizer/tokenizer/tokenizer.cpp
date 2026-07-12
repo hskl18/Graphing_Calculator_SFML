@@ -22,7 +22,7 @@ string Tokenizer::remove_space(string str)
 {
     // removing white space so can be tokenized
     string res = "";
-    for(int i = 0; i < str.length(); ++i)
+    for(std::size_t i = 0; i < str.length(); ++i)
     {
         if(str[i] == ' ') continue;
         res += str[i];

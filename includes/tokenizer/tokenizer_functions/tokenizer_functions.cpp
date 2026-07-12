@@ -14,12 +14,11 @@ Queue<int> _tokenize(string input, Queue<string>& tokens)
     input = remove_space(input);
     int index = 0;  
     Queue<int> token_types;
-    while(index < input.length())
+    while(index < static_cast<int>(input.length()))
     {   
         string token = "";
         int token_type = 0;
 
-        int idx_hold = index;
         int prev_type = (!token_types.empty()) ? token_types.back() : -1;
         _get_token(input, index, token, token_type, prev_type);
 
@@ -333,7 +332,7 @@ bool _is_number(string str, int pos, string& number, int prev_type)
         number += str[pos];
         pos++;
     }
-    for(int i = pos; i < str.length(); ++i)
+    for(int i = pos; i < static_cast<int>(str.length()); ++i)
     {
         if(!_is_digit(str[i]) && str[i] != '.' && str[i] != ' ') break;
         
@@ -344,7 +343,7 @@ bool _is_number(string str, int pos, string& number, int prev_type)
     //cout << number << endl;
     if(number[0] == '-')
     {
-        for(int i = 1; i < number.length(); ++i)
+        for(std::size_t i = 1; i < number.length(); ++i)
         {
             if(_is_digit(number[i])) return true;
         }
