@@ -89,7 +89,7 @@ void test_function_parentheses_and_arity() {
     expect_success(evaluator, "sin(0)", 0.0);
     expect_success(evaluator, "max(1,2)", 2.0);
 
-    for (const std::string& expression : {
+    for (const std::string expression : {
              "sin 0",
              "sin()",
              "sin(0,1)",
@@ -117,7 +117,7 @@ void test_unary_minus_and_precedence() {
 void test_invalid_adjacency_and_implicit_multiplication() {
     const ExpressionEvaluator evaluator;
 
-    for (const std::string& expression : {
+    for (const std::string expression : {
              "2x",
              "2(3+4)",
              "(2)(3)",
@@ -131,7 +131,7 @@ void test_invalid_adjacency_and_implicit_multiplication() {
 void test_unmatched_delimiters_and_non_finite_domains() {
     const ExpressionEvaluator evaluator;
 
-    for (const std::string& expression : {
+    for (const std::string expression : {
              "(2+3",
              "2+3)",
              "sin(0",
