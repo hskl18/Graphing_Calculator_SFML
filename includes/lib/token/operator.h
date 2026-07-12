@@ -22,9 +22,9 @@ public:
     ~Operator();
 
     // virtuals
-    const int tokenType() const override;
+    int tokenType() const override;
     void Print(ostream &outs) const override;
-    const int precedence() const override;
+    int precedence() const override;
     bool get_associativity(){return this->_associativity;}
     // member functions
     string get_operator() const;

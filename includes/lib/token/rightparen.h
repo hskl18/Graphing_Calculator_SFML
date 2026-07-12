@@ -14,7 +14,7 @@ private:
 public:
     RightParen();
     ~RightParen();
-    const int tokenType() const override;
+    int tokenType() const override;
     void Print(ostream &outs) const override;
     friend ostream& operator <<(ostream &outs, const RightParen &rp);
     friend ostream& operator <<(ostream& outs, const RightParen* rp);

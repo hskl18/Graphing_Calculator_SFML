@@ -3,6 +3,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <list>
+#include <stdexcept>
 #include <vector>
 using namespace std;
 
@@ -31,7 +32,7 @@ public:
         return outs;
     }
 
-    LRU(){}
+    LRU(): _capacity(0) {}
     LRU(int cap)
     {
         this->_capacity = cap;
@@ -43,7 +44,9 @@ public:
   
     V get(K key)
     {
-        assert(this->_map.count(key) > 0);
+        if (!this->_map.count(key)) {
+            throw out_of_range("LRU key was not found");
+        }
         this->make_recent(key);
         return this->_map[key];
     }
@@ -60,29 +63,29 @@ public:
         this->add_recent(key, val);
     }
 
-    vector<string> list_to_vec()
+    vector<K> list_to_vec()
     {
-        vector<string> res;
+        vector<K> res;
         for(const auto& x: this->_list)
         {
             res.push_back(x);
         }
         return res;
     }
-    const K& get_key(int index)
+    const K& get_key(std::size_t index) const
     {
-        int count = 0;
+        std::size_t count = 0;
         for(const auto& x: this->_list)
         {
             if(count == index) return x;
             count++;
-        }  
+        }
+        throw out_of_range("LRU index is out of range");
     }
 private:    
     void make_recent(K key)
     {
         if(!this->_map.count(key)) return;
-        V val = this->_map[key];
         this->_list.remove(key);
         this->_list.push_back(key);
     }
@@ -97,7 +100,6 @@ private:
     void delete_key(K key)
     {
         if(!this->_map.count(key)) return;
-        V val = this->_map[key];
         this->_list.remove(key);
         this->_map.erase(key);
     }
@@ -111,7 +113,7 @@ private:
     }
 
 //private:
-    int _capacity;
+    std::size_t _capacity;
     list<K> _list;
     unordered_map<K,V> _map;
 };

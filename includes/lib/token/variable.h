@@ -12,7 +12,7 @@ private:
 public:
     Variable();
     ~Variable();
-    const int tokenType() const override;
+    int tokenType() const override;
     void Print(ostream &outs) const override;
     friend ostream& operator <<(ostream &outs, const Variable &x);
     friend ostream& operator <<(ostream& outs, const Variable* x);

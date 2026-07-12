@@ -7,7 +7,7 @@ LeftParen::LeftParen()
 
 LeftParen::~LeftParen(){}   
 
-const int LeftParen::tokenType() const
+int LeftParen::tokenType() const
 {
     return LPAREN;
 }
