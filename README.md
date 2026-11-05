@@ -90,7 +90,13 @@ ctest --test-dir build --output-on-failure
 ```
 
 The headless suites verify the complete documented function set, strict numbers, precedence, variables, unary minus, function arity, invalid adjacency, delimiters, non-finite results, and LRU eviction behavior.
-CI compiles the full SFML application on Ubuntu and macOS, graphs the startup expression in a virtual display, verifies history-based error recovery, runs a packaged-resource smoke, and exercises the headless suite under AddressSanitizer and UndefinedBehaviorSanitizer.
+CI compiles the full SFML application on Ubuntu and runs the same suites, including a packaged-resource smoke.
+
+To graph the startup expression and check history recovery on Linux without a display:
+
+```bash
+xvfb-run -a ./build/graphing_calculator --smoke-test
+```
 
 To work only on the evaluator without installing SFML, disable the desktop target.
 

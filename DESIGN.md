@@ -46,6 +46,6 @@ The desktop skips individual non-finite samples so domain-limited functions can 
 
 Headless tests cover the full documented function set, number grammar, operator precedence, unary minus, arity, invalid adjacency, delimiters, non-finite domains, and LRU behavior.
 Plot tests cover finite vertex output, symmetric coordinate mapping, and canvas clipping.
-Full application builds, a virtual-display graph and recovery smoke, and a resource smoke verify SFML integration and executable-relative font loading.
-The sanitizer job covers the headless expression pipeline and token ownership.
+Full application builds and a resource smoke verify SFML integration and executable-relative font loading.
+Two checks run by hand: the `--smoke-test` flag graphs the startup expression and checks history recovery, and the `GRAPHING_CALCULATOR_ENABLE_SANITIZERS` CMake option covers the headless expression pipeline and token ownership.
 Automated tests do not claim pixel-level rendering correctness or complete interactive event coverage.
