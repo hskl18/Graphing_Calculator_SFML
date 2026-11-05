@@ -19,7 +19,6 @@ public:
 
 // Definition 
 
-// TODO 
 template <typename T>
 node<T>::node(const T& item, node<T>* next)
 {

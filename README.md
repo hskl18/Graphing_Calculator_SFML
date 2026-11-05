@@ -3,6 +3,9 @@
 This project is a desktop graphing calculator written in C++17 with SFML 2.
 It tokenizes a mathematical expression, converts infix notation to postfix notation, evaluates the result with reverse Polish notation, and samples the expression across a visible x range.
 
+I wrote the first version in 2023 while learning C++ and modernized it in 2026.
+The [`original-2023`](https://github.com/hskl18/Graphing_Calculator_SFML/tree/original-2023) tag keeps the first version.
+
 ![Graphing calculator screenshot](assets/demo.png)
 
 ## Features
@@ -27,7 +30,6 @@ It tokenizes a mathematical expression, converts infix notation to postfix notat
 | `includes/lib/lru` | Stores recent valid expressions for the history sidebar. |
 
 The exact grammar, ownership model, asset path, and evidence boundaries are documented in [DESIGN.md](DESIGN.md).
-The canonical repository is [hskl18/Graphing_Calculator_SFML](https://github.com/hskl18/Graphing_Calculator_SFML).
 
 ## Requirements
 
