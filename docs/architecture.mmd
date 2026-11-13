@@ -1,0 +1,12 @@
+flowchart TD
+  Engine["Engine<br/>SFML window loop,<br/>input box, zoom"] -->|"expression text"| Tok["Tokenizer<br/>typed tokens"]
+  Tok -->|"infix tokens"| Plot["Plot<br/>samples x<br/>from -35 to 35"]
+  Plot --> SY["Shunting-yard<br/>infix to postfix"]
+  SY -->|"postfix"| RPN["RPN evaluator<br/>y for each x"]
+  RPN -->|"y"| Plot
+  Plot -->|"vertices"| Engine
+  Engine <-->|"expression and<br/>its vertices"| LRU["LRU history<br/>five recent expressions"]
+  Evaluator["Headless evaluator<br/>one x, no plot or window,<br/>used by the tests"] -.-> Tok
+  Evaluator -.-> SY
+  Evaluator -.-> RPN
+%% Edit this file; the owner renders architecture-light.svg and architecture-dark.svg from it with a shared theme.
