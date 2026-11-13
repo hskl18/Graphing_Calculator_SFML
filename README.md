@@ -21,7 +21,7 @@ The [`original-2023`](https://github.com/hskl18/Graphing_Calculator_SFML/tree/or
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/architecture-dark.svg">
-  <img alt="The engine's SFML window loop sends the expression text from the input box to the tokenizer, whose infix tokens go to the plot. The plot samples the visible x range, runs the shunting-yard step to get postfix order, and asks the RPN evaluator for y at each x, and the resulting points become the vertices the engine draws. The engine keeps each expression and its vertices in an LRU history of five, and ExpressionEvaluator runs the same pipeline without a window for the tests." src="docs/architecture-light.svg">
+  <img alt="The engine's SFML window loop sends the expression text from the input box to the tokenizer, whose infix tokens go to the plot. The plot samples x from -35 to 35, runs the shunting-yard step to get postfix order, and asks the RPN evaluator for y at each x, and builds the vertices the engine draws. The engine keeps each valid expression and its vertices in an LRU history of five, and ExpressionEvaluator runs the tokenizer, shunting-yard, and RPN steps for one x without the plot or a window, for the tests." src="docs/architecture-light.svg">
 </picture>
 
 | Component | Responsibility |
